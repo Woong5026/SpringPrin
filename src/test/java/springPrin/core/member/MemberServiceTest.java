@@ -1,11 +1,20 @@
 package springPrin.core.member;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import springPrin.core.AppConfig;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    // 테스트 실행전에 무조건 실행되는 환경경
+   @BeforeEach
+    public void beforeEach(){
+       AppConfig appConfig = new AppConfig(); // 실행전에 AppConfig를 만들고
+       memberService = appConfig.memberService(); // 그 다음 memberService를 위의 memberService에 할당
+    }
 
     @Test
     void join(){
