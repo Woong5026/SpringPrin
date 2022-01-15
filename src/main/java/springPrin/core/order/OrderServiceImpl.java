@@ -1,17 +1,21 @@
 package springPrin.core.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import springPrin.core.discount.DiscountPolicy;
 import springPrin.core.discount.FixDiscountPolicy;
 import springPrin.core.member.Member;
 import springPrin.core.member.MemberRepository;
 import springPrin.core.member.MemoryMemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     // 실제 구현하는 OrderService를 구현하는 곳
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

@@ -1,8 +1,10 @@
 package springPrin.core.discount;
 
+import org.springframework.stereotype.Component;
 import springPrin.core.member.Grade;
 import springPrin.core.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;
