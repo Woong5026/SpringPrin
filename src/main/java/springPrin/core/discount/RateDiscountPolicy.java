@@ -1,5 +1,6 @@
 package springPrin.core.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import springPrin.core.member.Grade;
