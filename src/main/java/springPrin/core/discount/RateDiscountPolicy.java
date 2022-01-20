@@ -3,11 +3,12 @@ package springPrin.core.discount;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import springPrin.core.annotation.MainDiscountPolicy;
 import springPrin.core.member.Grade;
 import springPrin.core.member.Member;
 
 @Component
-@Primary
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;
